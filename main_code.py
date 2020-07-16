@@ -20,15 +20,15 @@ import statsmodels.api as sm
 
 
 # In[51]:
-
-dataset = pd.read_csv('data/HT_Sensor_dataset.dat',sep = '\t',header = None,engine='python')
+#Delete the first line from dataset
+dataset = pd.read_csv('data/HT_Sensor_dataset.dat',sep = '  ',header = None,engine='python')
 dataset.columns = ['id','time','R1','R2','R3','R4','R5','R6','R7','R8','Temp.','Humidity']
 dataset.set_index('id',inplace = True)
 dataset.head()
 
 
 # In[55]:
-
+#Delete the first line from metadata
 output = pd.read_csv('data/HT_Sensor_metadata.csv',sep = '\t',header = None)
 output.columns = ['id','date','class','t0','dt']
 output.head()
