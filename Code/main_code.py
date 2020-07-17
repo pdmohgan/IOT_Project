@@ -17,19 +17,24 @@ from sklearn.metrics import precision_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
 import statsmodels.api as sm
+from utilUCIGS import dnldAndPreprocessData,ifFileExists
 
 
 # In[51]:
+datadir = "../data/"
+fname = datadir + "HT_Sensor_dataset.dat"
 
-#Delete the first row of dataset file
-dataset = pd.read_csv('../data/HT_Sensor_dataset.dat',sep = '  ',header = None,engine='python')
+if(ifFileExists(fname) == False):
+	dnldAndPreprocessData(datadir)
+
+dataset = pd.read_csv(fname,sep = '  ',header = None,engine='python')
 dataset.columns = ['id','time','R1','R2','R3','R4','R5','R6','R7','R8','Temp.','Humidity']
 dataset.set_index('id',inplace = True)
 print(dataset.head())
 
 
-#Delete the first line from metadata
-output = pd.read_csv('../data/HT_Sensor_metadata.dat',sep = '\t',header = None)
+fname = datadir + "HT_Sensor_metadata.dat"
+output = pd.read_csv(fname,sep = '\t',header = None)
 output.columns = ['id','date','class','t0','dt']
 print(output.head())
 
