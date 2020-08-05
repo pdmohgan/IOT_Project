@@ -165,7 +165,7 @@ dataset_train.corr() > 0.98
 
 
 #Splitting the data into Train & Test data so that we can train and test the prediction
-xtrain,xtest,ytrain,ytest = train_test_split(dataset_train[[u'R1',u'R2',u'R3',u'R4',u'R5',u'R6',u'R7',u'R8',u'Temp.',u'Humidity']].values,dataset_train['class'].values,train_size = 0.01)
+xtrain,xtest,ytrain,ytest = train_test_split(dataset_train[[u'R1',u'R2',u'R3',u'R4',u'R5',u'R6',u'R7',u'R8',u'Temp.',u'Humidity']].values,dataset_train['class'].values,train_size = 0.25)
 #Above line contains the train data set percentage
 for i in range(ytrain.shape[0]):
     if(ytrain[i] == 'background'):
