@@ -1,0 +1,43 @@
+pdmohgan@MOHGAN:~/MTech/IOT/Gas-Sensor-for-Home-Activity-Monitoring-Dataset-master/code$ python3 FinalCode.py 
+                    Robust linear Model Regression Results                    
+==============================================================================
+Dep. Variable:                  class   No. Observations:                 9289
+Model:                            RLM   Df Residuals:                     9279
+Method:                          IRLS   Df Model:                            9
+Norm:                          HuberT                                         
+Scale Est.:                       mad                                         
+Cov Type:                          H1                                         
+Date:                Wed, 05 Aug 2020                                         
+Time:                        19:09:20                                         
+No. Iterations:                    19                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+R1             0.4128      0.014     28.749      0.000       0.385       0.441
+R2            -0.1688      0.022     -7.719      0.000      -0.212      -0.126
+R3            -0.2433      0.013    -18.614      0.000      -0.269      -0.218
+R4             0.0890      0.024      3.760      0.000       0.043       0.135
+R5             0.0048      0.000     11.292      0.000       0.004       0.006
+R6             0.0148      0.002      6.079      0.000       0.010       0.020
+R7            -0.0427      0.005     -9.361      0.000      -0.052      -0.034
+R8            -0.0247      0.003     -7.059      0.000      -0.031      -0.018
+Temp.         -0.0770      0.006    -13.644      0.000      -0.088      -0.066
+Humidity       0.0172      0.002     10.323      0.000       0.014       0.020
+==============================================================================
+
+If the model instance has been used for another fit with different fit parameters, then the fit options might not be the correct ones anymore .
+Logistic Regression related Results
+accuracy_score of LogisticRegression
+0.3837145075252636   ----------------------->   Logistic Regression Result 38.3%
+confusion matrix is:
+[[  8621 244725  20830]
+ [  8385 270472  23582]
+ [  9775 259502  73810]]
+SVM Logic Related Results
+SVC done
+fit done
+confusion matrix is:
+[[212065    634  61477]
+ [ 28680  71811 201948]
+ [ 44184   8004 290899]]
+0.6249578667872855    -------------------->   SVM Result 62.5%
